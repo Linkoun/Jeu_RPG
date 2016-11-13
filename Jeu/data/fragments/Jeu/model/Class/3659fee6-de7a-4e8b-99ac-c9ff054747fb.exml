@@ -1,0 +1,188 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="ButtonListener" version="4">
+  <OBJECT>
+    <ID name="ButtonListener" mc="Standard.Class" uid="3659fee6-de7a-4e8b-99ac-c9ff054747fb"/>
+    <PID name="FenJeu" mc="Standard.Class" uid="4067d56a-fd09-4885-8106-9a3b3e916518"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[ButtonListener]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedOperation">
+        <OBJECT>
+          <ID name="actionPerformed" mc="Standard.Operation" uid="9466b693-7638-4407-aa52-e4b09ad087f8"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[actionPerformed]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="event" mc="Standard.Parameter" uid="5da55fe8-056e-4bdb-9db5-58bb7d7f3fad"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[event]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Standard.TaggedValue" uid="a1f6d301-355f-4de5-8b66-120f51b5c75b"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="Standard.TagParameter" uid="7197dd53-7db6-4e37-8955-87bdd6fc24d0"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[ActionEvent]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaTypeExpr" mc="Standard.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Standard.Note" uid="11cf5d48-3df4-441d-a957-ef57e79e2bf5"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[String s=event.getActionCommand();
+if(s.equals("New Character"))
+    FenJeu.this.setContentPane(FenJeu.this.NewP());
+if(s.equals("Load Character"))
+    FenJeu.this.setContentPane(FenJeu.this.LoadP(LOAD));
+if(s.equals("Save Character"))
+    FenJeu.this.setContentPane(FenJeu.this.LoadP(SAVE));
+if(s.equals("Show Skills"))
+    FenJeu.this.setContentPane(FenJeu.this.UseSkillP(1));
+if(s.equals("Upgrade")){
+    try{
+        if(butFOR.isSelected())
+            character.UpgradeStat(character,1);
+        if(butDEX.isSelected())
+            character.UpgradeStat(character,2);
+        if(butINT.isSelected())
+            character.UpgradeStat(character,3);
+        if(butCON.isSelected())
+            character.UpgradeStat(character,4);
+        character.setVIT();
+    }
+    catch(Exception ex){
+        new FenErreur("Upgrade failed",ex.getMessage());
+    }
+    FenJeu.this.setContentPane(FenJeu.this.MainP());
+}
+if(s.equals("Inventory")){
+    FenJeu.this.setContentPane(FenJeu.this.InvP());
+}
+if(s.equals("Fight")){
+    Character Ene=null;
+    fight=new Fight(FenJeu.this.character,Character.charger("Sauvegarde4",Ene));
+    FenJeu.this.setContentPane(FenJeu.this.FightP());
+    ite=fight.setFight();
+    p1.setText("HP = "+fight.getC1().getHP()+"/"+fight.getC1().getVIT()+"\n"+fight.getC1());
+    p2.setText("HP = "+fight.getC2().getHP()+"/"+fight.getC2().getVIT()+"\n"+fight.getC2());
+    if(ite==1){
+        Cons.append(fight.getC2().getName()+" begin the next turn.\n");
+        fight.setAction2(fight.ActionAuto(fight.getC2()));
+    }
+    else
+        Cons.append(fight.getC1().getName()+" begin the next turn.\n");
+    if(((fight.getAction2() instanceof Weapon && !(((Weapon) fight.getAction2()).isModeDefense())) || (fight.getAction2() instanceof Shield && !(((Shield)fight.getAction2()).isModeDefense())) ||(fight.getAction2() instanceof Skill && ((Skill)fight.getAction2()).getType().equals("Attack")))){
+        fight.setT1attacking(true);
+        Cons.append(fight.getC2().getName()+" will attack\n");
+    }
+    else
+        fight.setT1attacking(false);
+    if(fight.getT1attacking()){
+        DW.setEnabled(true);
+        DS.setEnabled(true);
+        Wait.setEnabled(true);
+    }
+    else{
+        DW.setEnabled(false);
+        DS.setEnabled(false);
+        Wait.setEnabled(false);
+    }
+}
+if(s.equals("Quitter"))
+    FenJeu.this.dispose();
+
+FenJeu.this.revalidate();
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Standard.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Standard.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Tag">
+        <OBJECT>
+          <ID name="" mc="Standard.TaggedValue" uid="debcd76a-16dc-4e57-863a-0aaa67ebc773"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Actual">
+              <OBJECT>
+                <ID name="" mc="Standard.TagParameter" uid="c540e0c9-f752-489f-aa0b-413dbf6d3772"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[ActionListener]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Definition">
+              <FOREIGNID name="JavaImplements" mc="Standard.TagType" uid="003800a8-0000-0156-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Jeu" version="4">
+  <OBJECT>
+    <ID name="Jeu" mc="Standard.PropertyContainer" uid="3c06126a-6920-4c6d-b8b9-dd1e9d387f3f"/>
+    <PID name="Jeu" mc="Standard.AnalystProject" uid="b61378b5-87b1-4d47-ba61-d84f845462c8"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[Jeu]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

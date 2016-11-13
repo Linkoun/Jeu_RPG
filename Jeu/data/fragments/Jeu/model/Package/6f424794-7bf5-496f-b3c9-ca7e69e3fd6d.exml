@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="jeu" version="4">
+  <OBJECT>
+    <ID name="jeu" mc="Standard.Package" uid="6f424794-7bf5-496f-b3c9-ca7e69e3fd6d"/>
+    <PID name="Jeu" mc="Standard.Project" uid="979cb3ed-bd25-4763-a7df-dcb290b0896b"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[jeu]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="jeu" mc="Standard.Package" uid="b9c5e171-cfe1-4961-9091-b21bf017f6d5"/>
+        <COMPID name="Player" mc="Standard.Actor" uid="16dbacc6-65ad-4290-839a-91d4cbb85450"/>
+        <COMPID name="Choose a character" mc="Standard.UseCase" uid="76e6e1d5-33f3-4657-aa0e-297927b2e7e6"/>
+        <COMPID name="Play" mc="Standard.UseCase" uid="1ac18cd3-894d-4297-8812-df204c795167"/>
+        <COMPID name="Create a character" mc="Standard.UseCase" uid="e455c7f0-24d5-42fd-b83e-b4792462ac62"/>
+        <COMPID name="Attribute statistics" mc="Standard.UseCase" uid="5183f39c-6905-427b-82f0-ca15cf5f2128"/>
+        <COMPID name="Create a Hunter" mc="Standard.UseCase" uid="5dfb45a5-f75e-488d-bc7d-9a32278446f2"/>
+        <COMPID name="Create a Magician" mc="Standard.UseCase" uid="a6cf4883-3c92-4e7d-acca-2770df47e433"/>
+        <COMPID name="Create a Warrior" mc="Standard.UseCase" uid="5cb9e75b-382b-4cf9-af26-044aecfc720a"/>
+        <COMPID name="Show Inventory" mc="Standard.UseCase" uid="1047d160-c8a3-4739-9687-5560f7b91760"/>
+        <COMPID name="Show Skills" mc="Standard.UseCase" uid="662be49a-5098-446c-98df-f3aa347b5493"/>
+        <COMPID name="Choose Weapon" mc="Standard.UseCase" uid="c5032803-1031-4ac3-bfce-bfdd8cfec245"/>
+        <COMPID name="Choose Shield" mc="Standard.UseCase" uid="2a1e2215-e020-424e-8dce-a4434c92e0c0"/>
+        <COMPID name="Choose an action" mc="Standard.UseCase" uid="8eceda4f-0299-4a52-b6ac-d61b57990f24"/>
+        <COMPID name="Escape" mc="Standard.UseCase" uid="b8985574-1796-4ff3-81e7-c6cfbb9346d3"/>
+        <COMPID name="Attack" mc="Standard.UseCase" uid="2ed5376f-a7c2-4416-a088-f087c88b4940"/>
+        <COMPID name="Defend" mc="Standard.UseCase" uid="eeaacd11-a6be-4239-b0c0-3e13ee5ca6fd"/>
+        <COMPID name="Use Potion" mc="Standard.UseCase" uid="f2fc3e5f-8aec-4d0c-b3d1-25d8ec28cd0d"/>
+        <COMPID name="Use Skills" mc="Standard.UseCase" uid="13e72f7a-8b55-46d8-863b-a57c71666f4f"/>
+        <COMPID name="Save Game" mc="Standard.UseCase" uid="3aeca68f-4772-415c-919d-ce616364c9f7"/>
+        <COMPID name="Load Game" mc="Standard.UseCase" uid="5f11b4d0-afe8-4727-bebc-679e88a047d9"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="jeu Class diagram" mc="Standard.ClassDiagram" uid="a5de95dc-e94e-4c4b-beea-24a1085f2b97"/>
+        <COMPID name="jeu Use Case diagram" mc="Standard.UseCaseDiagram" uid="b46e7eb3-0d79-4beb-b7c6-fbd3f9f7f744"/>
+      </COMP>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Standard.Note" uid="eb7348ad-7985-42ad-bb96-5789cb95c769"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[<Enter note text here>]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Standard.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

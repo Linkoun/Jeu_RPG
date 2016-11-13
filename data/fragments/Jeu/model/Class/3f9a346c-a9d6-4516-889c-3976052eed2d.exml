@@ -1,0 +1,267 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Game" version="4">
+  <OBJECT>
+    <ID name="Game" mc="Standard.Class" uid="3f9a346c-a9d6-4516-889c-3976052eed2d"/>
+    <PID name="jeu" mc="Standard.Package" uid="b9c5e171-cfe1-4961-9091-b21bf017f6d5"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Game]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedOperation">
+        <OBJECT>
+          <ID name="main" mc="Standard.Operation" uid="19ec0114-354e-4fa1-9386-44cee1dcf8f0"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[main]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="args" mc="Standard.Parameter" uid="3232e616-c9bc-47ba-9fa2-117cf4311324"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[args]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Standard.TaggedValue" uid="879dd05f-4f32-4e70-9941-99140e6df9f1"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="Standard.TagParameter" uid="ea3fa87f-3c27-439d-a406-d18b0d178faa"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[Array]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="type" mc="Standard.TagType" uid="00000000-0000-3767-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                    <OBJECT>
+                      <ID name="" mc="Standard.TaggedValue" uid="b161f8f3-cebe-4a3e-b69f-57f94f882878"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="Standard.TagParameter" uid="c6147f46-7834-49ba-8b5d-be1d4c3aa1dc"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[String]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaTypeExpr" mc="Standard.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Standard.Note" uid="c90504c5-daf7-409a-88e8-5bf74fba9de5"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Toolkit TK= Toolkit.getDefaultToolkit();
+Dimension dim= TK.getScreenSize();
+new FenJeu("Jeu",0,0,dim.width-400,dim.height-200);
+    /*    String s=null;
+Character C=null;
+do{
+    Scanner input=new Scanner(System.in);
+    if(C==null){
+        do{
+        
+        System.out.println("\nMain Menu\n0. Quit\n1. Create a Character\n2. Load Character");
+        s=input.next();
+        }while(!(s.equals("0") || s.equals("1") || s.equals("2")));
+    }
+    
+    else{
+        do{
+            System.out.println("\nMain Menu\n0. Quit\n1. Create a new character\n2. Load Character\n3. Save Character\n4. Fight\n5. Inventory\n6. Show Skill\n7. Upgrade Statistics\n8. Show character's statistics");
+            s=input.next();
+        }while(!(s.equals("0") || s.equals("1") || s.equals("2") || s.equals("3") || s.equals("4") || s.equals("5") || s.equals("6") || s.equals("7") || s.equals("8")));
+    }
+    
+    if(s.equals("1")){
+        C=new Character();
+        C=Character.createCharacter();
+    }
+    else if(s.equals("2")){
+        do{
+            System.out.println("\nWhich Slot ?(1,2,3,4) or Cancel(C)");
+            s=input.next();
+        }while(!(s.equals("1") || s.equals("2") || s.equals("3") || s.equals("4") || s.equals("C")));
+        try{
+            if(!(s.equals("C"))){
+                C=new Character(Character.charger("Sauvegarde"+s, C));
+                System.out.println(C);
+            }
+        }
+        catch(NullPointerException e){
+            
+        }
+        
+    }
+    else if(s.equals("3")){
+        do{
+            System.out.println("\nWhich Slot ?(1,2,3,4) or Cancel(C)");
+            s=input.next();
+        }while(!(s.equals("1") || s.equals("2") || s.equals("3") || s.equals("4") || s.equals("C")));
+        if(!(s.equals("C")))
+            Character.sauvegarder("Sauvegarde"+s, C);
+        
+    }
+    
+    else if(s.equals("4")){
+        Character Char=new Character();
+        Char=Character.charger("Sauvegarde4", Char);
+        if(C.getShi()==null || C.getWea()==null)
+            System.out.println("You can't fight without weapon or shield");
+        else{
+        Fight f= new Fight(C,Char);
+        f.StartFight();
+        }
+    }
+    else if(s.equals("5")){
+        
+        do{    
+            System.out.println("\nWeapon : "+C.getWea());
+            System.out.println("\nShield : "+C.getShi());
+            do{
+                System.out.println("\nDo you want to change your weapon(W) or your shield(S), Back(B)");
+                s=input.next();
+            }while(!(s.equals("W") || s.equals("S") || s.equals("B")));
+            if(s.equals("W"))
+                C.ChoseWeapon();
+            else if(s.equals("S"))
+                C.ChoseShield();
+        }while(!(s.equals("B")));
+    }
+    else if(s.equals("6")){
+            System.out.println(C.SkillList());
+    
+    }
+    
+    else if(s.equals("7")){
+        C.UpgradeStat(C);
+        C.setVIT();
+    }
+    
+    else if(s.equals("8")){
+        System.out.println(C);
+    }
+    
+    
+
+
+}while(!(s.equals("0")));
+System.out.println("Thanks for playing.");*/
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Standard.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Standard.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Tag">
+        <OBJECT>
+          <ID name="" mc="Standard.TaggedValue" uid="f42c25b2-c2fb-4244-b3f4-f10f61cabc37"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Actual">
+              <OBJECT>
+                <ID name="" mc="Standard.TagParameter" uid="0c5460be-5d26-419f-817b-6c40e9132c03"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[java.util.*]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Standard.TagParameter" uid="deeb340d-abd5-4159-b328-37a553056796"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[java.awt.Dimension]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Standard.TagParameter" uid="61597464-d5a2-4580-b94f-b09f0b3abd03"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[java.awt.Toolkit]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Standard.TagParameter" uid="43a7c066-7aa7-4a8c-8817-9391111ad5b2"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[java.io.*]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Definition">
+              <FOREIGNID name="JavaImport" mc="Standard.TagType" uid="003800a8-0000-0155-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

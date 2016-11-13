@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="jeu" version="4">
+  <OBJECT>
+    <ID name="jeu" mc="Standard.Package" uid="b9c5e171-cfe1-4961-9091-b21bf017f6d5"/>
+    <PID name="jeu" mc="Standard.Package" uid="6f424794-7bf5-496f-b3c9-ca7e69e3fd6d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[jeu]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Ability" mc="Standard.Class" uid="c7a8a436-f219-4682-8df8-5fe8c00d2342"/>
+        <COMPID name="Character" mc="Standard.Class" uid="153b2283-0ed3-4e2e-bc30-46dc90704ce5"/>
+        <COMPID name="Fight" mc="Standard.Class" uid="d0742bac-bd91-446e-9236-b87cc152e26c"/>
+        <COMPID name="Game" mc="Standard.Class" uid="3f9a346c-a9d6-4516-889c-3976052eed2d"/>
+        <COMPID name="Hunter" mc="Standard.Class" uid="b9d78958-ddd5-4e64-bef4-a333d546be89"/>
+        <COMPID name="Magician" mc="Standard.Class" uid="5ec720b9-6c37-4599-8c63-a3a2f53cd436"/>
+        <COMPID name="Potion" mc="Standard.Class" uid="129add3a-6fad-4338-b3a9-f0c1c4c5eca8"/>
+        <COMPID name="Shield" mc="Standard.Class" uid="b99385d6-2344-4589-8edb-859c38b2103c"/>
+        <COMPID name="Skill" mc="Standard.Class" uid="b9b24eac-c18a-4f6b-ab7c-9f3391064ba7"/>
+        <COMPID name="Warrior" mc="Standard.Class" uid="80c61ca7-6acc-42a9-860d-571527584d35"/>
+        <COMPID name="ExceptionChar" mc="Standard.Class" uid="e58e8323-dc95-454b-b560-5ef3f16a500b"/>
+        <COMPID name="FenErreur" mc="Standard.Class" uid="d51c0835-3fe0-484d-b6b8-221d8e94fb25"/>
+        <COMPID name="FenJeu" mc="Standard.Class" uid="4067d56a-fd09-4885-8106-9a3b3e916518"/>
+        <COMPID name="PanelChar" mc="Standard.Class" uid="e55bb1a1-405a-48d7-a064-d59661e3ca03"/>
+        <COMPID name="PanelIcon" mc="Standard.Class" uid="158e881e-ddbc-4289-91e0-63b0d29500cf"/>
+        <COMPID name="PanelShop" mc="Standard.Class" uid="994faae8-bc20-413e-94f6-b34c196147c5"/>
+        <COMPID name="PanelStart" mc="Standard.Class" uid="30321246-5455-4023-92e3-14713968444e"/>
+        <COMPID name="PanelImage" mc="Standard.Class" uid="e4bb13db-cd82-4910-b4be-681f0b4a3530"/>
+        <COMPID name="Weapon" mc="Standard.Class" uid="2a96d536-58fa-45d8-b979-27a1c4e52909"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Standard.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
